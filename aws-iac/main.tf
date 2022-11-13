@@ -17,11 +17,11 @@ provider "aws" {
 
 # resource {} defines components of your infrastructure
 resource "aws_instance" "app_server" {
-  ami           = "ami-0e6329e222e662a52"
+  ami           = "ami-069d9fecd19e7ed40"
   instance_type = "t2.micro"
 
   tags = {
-    Name = "TerraformInstance"
+    Name = "TerraformRedHatInstance"
   }
 
 }
