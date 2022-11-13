@@ -12,16 +12,16 @@ terraform {
 
 # provider {} configures aws provider
 provider "aws" {
-  region = "ap-south-1"
+  region = var.aws_region
 }
 
 # resource {} defines components of your infrastructure
 resource "aws_instance" "app_server" {
-  ami           = "ami-069d9fecd19e7ed40"
-  instance_type = "t2.micro"
+  ami           = var.ami_id
+  instance_type = var.instance_type
 
   tags = {
-    Name = "TerraformRedHatInstance"
+    Name = var.instance_name
   }
 
 }
